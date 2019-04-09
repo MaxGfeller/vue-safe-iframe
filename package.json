@@ -1,6 +1,6 @@
 {
   "name": "vue-safe-iframe",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Safely include html in a iframe",
   "main": "dist/vue-safe-iframe.umd.js",
   "module": "dist/vue-safe-iframe.esm.js",
