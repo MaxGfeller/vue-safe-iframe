@@ -4,6 +4,10 @@ var serialize = ref.serialize;
 
 function cleanHTML (html, opts) {
   var ast = parse(html);
+
+  if (ast.length > 1) {
+    ast.childNodes = ast.childNodes.filter(function (childNode) { return childNode.tagName === 'html'; });
+  }
   if (!opts.allowHrefTargets) { removeTargets(ast); }
   if (!opts.allowScripts) { removeScripts(ast); }
 
