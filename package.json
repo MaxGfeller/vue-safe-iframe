@@ -1,0 +1,46 @@
+{
+  "name": "vue-safe-iframe",
+  "version": "0.0.0",
+  "description": "Safely include html in a iframe",
+  "main": "dist/vue-safe-iframe.umd.js",
+  "module": "dist/vue-safe-iframe.esm.js",
+  "unpkg": "dist/vue-safe-iframe.min.js",
+  "browser": {
+    "./sfc": "src/SafeIFrame.vue"
+  },
+  "scripts": {
+    "test": "standard",
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-safe-iframe.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-safe-iframe.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-safe-iframe.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxGfeller/vue-safe-iframe.git"
+  },
+  "keywords": [
+    "vue",
+    "iframe",
+    "safe",
+    "html",
+    "container"
+  ],
+  "author": "Max Gfeller <mail@maxgfeller.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxGfeller/vue-safe-iframe/issues"
+  },
+  "homepage": "https://github.com/MaxGfeller/vue-safe-iframe#readme",
+  "dependencies": {
+    "parse5": "^5.1.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.9.0",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-vue": "^4.7.2",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
