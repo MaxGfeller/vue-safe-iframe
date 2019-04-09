@@ -14,8 +14,8 @@ function cleanHTML (html, opts) {
   alterBaseAttribute(ast, opts.openLinksInFrame);
 
   return {
-    head: serialize(ast.childNodes[0].childNodes[0]),
-    body: serialize(ast.childNodes[0].childNodes[1])
+    head: serialize(ast.childNodes[0].childNodes.find(function (childNode) { return childNode.nodeName === 'head'; })),
+    body: serialize(ast.childNodes[0].childNodes.find(function (childNode) { return childNode.nodeName === 'body'; }))
   }
 }
 
