@@ -3,7 +3,7 @@ const { parse, serialize } = require('parse5')
 export function cleanHTML (html, opts) {
   let ast = parse(html)
 
-  if (ast.length > 1) {
+  if (ast.childNodes.length > 1) {
     ast.childNodes = ast.childNodes.filter((childNode) => childNode.tagName === 'html')
   }
   if (!opts.allowHrefTargets) removeTargets(ast)
